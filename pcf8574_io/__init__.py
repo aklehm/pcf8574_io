@@ -3,9 +3,9 @@ from pcf8574_io import PCF85
 
 class PCF:
 
-    def __init__(self, address):
+    def __init__(self, address, status=0xFF):
         self.address = address
-        self.status = True
+        self.status = status
         self.pinModeFlag = 0x00
         self.smBusNum = 1
         PCF85.setup(address, self.smBusNum, self.status)

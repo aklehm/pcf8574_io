@@ -5,7 +5,7 @@ import math
 def setup(PCFAdd, smBus, status):
     if status:
         with SMBus(smBus) as bus:
-            bus.write_byte(PCFAdd, 0xFF)
+            bus.write_byte(PCFAdd, status)
     elif not status:
         with SMBus(smBus) as bus:
             bus.write_byte(PCFAdd, 0x00)
