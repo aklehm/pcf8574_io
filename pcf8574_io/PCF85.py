@@ -3,10 +3,10 @@ import math
 
 
 def setup(PCFAdd, smBus, status):
-    if status:
+    if status is not None:
         with SMBus(smBus) as bus:
             bus.write_byte(PCFAdd, status)
-    elif not status:
+    else:
         with SMBus(smBus) as bus:
             bus.write_byte(PCFAdd, 0x00)
 
